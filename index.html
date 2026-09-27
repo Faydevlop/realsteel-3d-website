@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Steel</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0909'/%3E%3Crect x='30' y='30' width='40' height='40' fill='%23ec3013'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<section id="track" class="track">
+  <div class="stage">
+    <div class="beam"></div>
+    <div class="bignum" data-fade data-bind="num"></div>
+
+    <div id="stage3d" class="stage3d"></div>
+    <div class="scrim"></div>
+
+    <nav class="topnav">
+      <div class="brand"><span class="brand-mark"></span><span>Real Steel</span></div>
+      <div class="navlinks-wrap">
+        <div id="navLinks" class="navlinks" data-roomy></div>
+      </div>
+      <div class="nav-end">
+        <button class="btn btn-primary btn-trailer-sm" data-action="openTrailer">
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor"><path d="M0 0L14 8L0 16Z"/></svg>
+          <span>Watch trailer</span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="railNums" class="rail"></div>
+
+    <div class="copy">
+      <div class="copy-main" data-fade data-shift>
+        <div class="kicker">
+          <span><span class="accent strong"><span data-bind="num"></span> /</span> <span class="white strong">04</span></span>
+          <span class="muted" data-bind="gen"></span>
+        </div>
+        <h1 class="title" data-bind="name"></h1>
+        <div class="tags">
+          <span class="white" data-bind="tag1"></span>
+          <span class="accent" data-bind="tag2"></span>
+        </div>
+        <p class="bio" data-roomy data-bind="bio"></p>
+        <div class="ctas">
+          <button class="btn btn-primary cta" data-action="openTrailer">
+            <svg width="16" height="18" viewBox="0 0 14 16" fill="currentColor"><path d="M0 0L14 8L0 16Z"/></svg>
+            <span>Watch the trailer</span>
+          </button>
+          <button class="btn btn-secondary cta cta-ghost" data-action="toggleCam">
+            <span id="exploreLabel"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="stats" class="stats" data-fade data-tall></div>
+    </div>
+
+    <div class="dock">
+      <div id="preview" class="preview">
+        <div class="preview-frame"><video id="video" autoplay muted playsinline></video></div>
+        <span id="shadowStatus" class="preview-status"></span>
+        <a id="openTab" class="btn btn-primary open-tab" target="_blank" hidden>Open in new tab</a>
+      </div>
+      <div class="dock-btns">
+        <button id="shadowBtn" class="btn btn-secondary dock-btn" title="Control the robot with your webcam" data-action="toggleShadow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><circle cx="12" cy="10" r="7"/><circle cx="12" cy="10" r="2.5"/><path d="M7 22h10M12 17v5"/></svg>
+          <span id="shadowLabel">Shadow mode</span>
+        </button>
+        <button class="btn btn-secondary dock-btn" title="Switch camera view" data-action="toggleCam">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          <span id="camLabel">Full body</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading" hidden></div>
+  </div>
+</section>
+
+<div id="trailer" class="trailer" hidden>
+  <div class="trailer-box">
+    <div class="trailer-head">
+      <span>Real Steel · Official trailer</span>
+      <button class="btn btn-ghost trailer-close" data-action="closeTrailer">Close ✕</button>
+    </div>
+    <div class="trailer-frame"></div>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
